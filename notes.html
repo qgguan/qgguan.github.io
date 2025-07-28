@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Qingguang Guan | Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a6d;
+            --secondary: #8b0000;
+            --accent: #d4af37;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23e9ecef" stroke-width="0.5"/></svg>');
+            opacity: 0.1;
+            z-index: -1;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+        }
+        p {
+            margin-bottom: 1.5rem;
+        }
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover {
+            color: var(--primary);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        section {
+            padding: 100px 0;
+        }
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 700;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        /* Hero Section */
+        #hero {
+            padding-top: 150px;
+            background: linear-gradient(135deg, rgba(26, 58, 109, 0.1) 0%, rgba(255, 255, 255, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+            z-index: 2;
+        }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        .hero-image-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+            border: 5px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1.5" fill="%231a3a6d" opacity="0.2"/><circle cx="30" cy="30" r="1.5" fill="%231a3a6d" opacity="0.2"/><circle cx="50" cy="50" r="1.5" fill="%231a3a6d" opacity="0.2"/><circle cx="70" cy="70" r="1.5" fill="%231a3a6d" opacity="0.2"/><circle cx="90" cy="90" r="1.5" fill="%231a3a6d" opacity="0.2"/></svg>');
+            opacity: 0.1;
+            z-index: 1;
+        }
+        .title-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Section: Notes */
+        #notes {
+            background: white;
+        }
+        .notes-content {
+            margin-top: 40px;
+        }
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .notes-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+        .notes-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .notes-content {
+            padding: 30px;
+        }
+        .notes-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .notes-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .notes-tag {
+            background: rgba(26, 58, 109, 0.1);
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .notes-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(26, 58, 109, 0.05);
+            border-radius: 8px;
+        }
+        .notes-section h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 30px 0;
+        }
+        .social-links li {
+            margin: 0 15px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            .hero-bg-pattern {
+                width: 100%;
+                opacity: 0.05;
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: white;
+                text-align: center;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease;
+                padding: 20px 0;
+            }
+            .nav-links.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            .nav-links li {
+                margin: 15px 0;
+            }
+            .hamburger {
+                display: block;
+                font-size: 1.5rem;
+            }
+            section {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Dr. Guan</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#research">Research</a></li>
+                    <li><a href="index.html#publications">Publications</a></li>
+                    <li><a href="index.html#teaching">Teaching</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#" class="active">Notes</a></li>
+                </ul>
+                <div class="hamburger">☰</div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="title-tag">Teaching & Research Notes</span>
+                    <h1>Notes by Dr. Qingguang Guan</h1>
+                    <p>Explore my collection of teaching materials, research notes, and technical documents on computational mathematics, deep learning, and numerical analysis of PDEs.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 30px;">
+                        <a href="index.html" class="btn">Back to Home</a>
+                        <a href="#teaching-notes" class="btn btn-outline">Teaching Notes</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">
+                        <div>Dr. Qingguang Guan<br><span style="font-size: 1rem;">Assistant Professor of Mathematics</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bg-pattern"></div>
+        </div>
+    </section>
+    
+    <!-- Notes Section -->
+    <section id="notes">
+        <div class="container">
+            <h2>Teaching & Research Notes</h2>
+            <p>Here you'll find lecture notes, technical documents, and supplementary materials from my courses and research projects. These materials cover various topics in computational mathematics, deep learning, and numerical analysis of PDEs.</p>
+            
+            <div class="notes-grid">
+                <div class="notes-card">
+                    <div class="notes-content">
+                        <h3>Deep Learning Seminar</h3>
+                        <p>Lecture notes covering deep neural networks, CNNs, RNNs, Transformers, and GANs with applications to scientific computing.</p>
+                        <div class="notes-tags">
+                            <span class="notes-tag">Deep Learning</span>
+                            <span class="notes-tag">Neural Networks</span>
+                            <span class="notes-tag">AI</span>
+                        </div>
+                        <a href="#" class="btn" style="font-size: 0.8rem; padding: 8px 15px;">Download Notes (PDF)</a>
+                    </div>
+                </div>
+                
+                <div class="notes-card">
+                    <div class="notes-content">
+                        <h3>Numerical Analysis of PDEs</h3>
+                        <p>Comprehensive notes on finite element methods, weak Galerkin methods, and numerical solutions for partial differential equations.</p>
+                        <div class="notes-tags">
+                            <span class="notes-tag">FEM</span>
+                            <span class="notes-tag">Weak Galerkin</span>
+                            <span class="notes-tag">Numerical Methods</span>
+                        </div>
+                        <a href="#" class="btn" style="font-size: 0.8rem; padding: 8px 15px;">Download Notes (PDF)</a>
+                    </div>
+                </div>
+                
+                <div class="notes-card">
+                    <div class="notes-content">
+                        <h3>Computational Neuroscience</h3>
+                        <p>Notes on modeling calcium dynamics in neurons and hybrid PDE-deep learning approaches for neuroscience applications.</p>
+                        <div class="notes-tags">
+                            <span class="notes-tag">Neuroscience</span>
+                            <span class="notes-tag">Calcium Dynamics</span>
+                            <span class="notes-tag">Hybrid Models</span>
+                        </div>
+                        <a href="#" class="btn" style="font-size: 0.8rem; padding: 8px 15px;">Download Notes (PDF)</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notes-section" id="teaching-notes">
+                <h3>Teaching Materials</h3>
+                <p>These are materials developed for my courses at the University of Southern Mississippi and Temple University:</p>
+                
+                <div style="margin-top: 20px;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">Graduate Courses</h4>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Deep Learning Seminar (2023 Fall)</strong>: Notes on Deep Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, and Generative Adversarial Networks.</li>
+                        <li style="margin-bottom: 10px;"><strong>Ordinary Differential Equations (Graduate, 2023 Fall)</strong>: Comprehensive notes on ODE theory and applications.</li>
+                        <li style="margin-bottom: 10px;"><strong>Introduction to PDE (2023 Spring)</strong>: Foundational materials on partial differential equations.</li>
+                        <li style="margin-bottom: 10px;"><strong>Numerical Analysis I (2021 Fall, Temple University)</strong>: Detailed notes on numerical methods for scientific computing.</li>
+                    </ul>
+                    
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">Undergraduate Courses</h4>
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Calculus I, III, IV (Multiple Semesters)</strong>: Lecture notes and problem sets for calculus sequence.</li>
+                        <li style="margin-bottom: 10px;"><strong>Ordinary Differential Equations (2020 Spring, 2019 Spring)</strong>: Teaching materials for ODE courses.</li>
+                        <li style="margin-bottom: 10px;"><strong>Trigonometry & College Algebra (2018 Fall)</strong>: Foundational mathematics materials.</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="btn">Download All Teaching Materials</a>
+                </div>
+            </div>
+            
+            <div class="notes-section">
+                <h3>Research Notes</h3>
+                <p>Technical documents and working notes from my research projects:</p>
+                
+                <div style="margin-top: 20px;">
+                    <ul style="margin-left: 20px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 15px;"><strong>Weak Galerkin Finite Element Methods</strong>: Detailed analysis and implementation notes for WG-FEM on various mesh types.</li>
+                        <li style="margin-bottom: 15px;"><strong>Nonlocal PDEs and Fractional Diffusion</strong>: Mathematical foundations and numerical approaches for nonlocal problems.</li>
+                        <li style="margin-bottom: 15px;"><strong>Stochastic PDEs and Uncertainty Quantification</strong>: Methods for solving PDEs with random inputs and parameters.</li>
+                        <li style="margin-bottom: 15px;"><strong>Virtual Element Methods</strong>: Implementation details and error analysis for VEM.</li>
+                        <li style="margin-bottom: 15px;"><strong>Computational Neuroscience Models</strong>: Mathematical models of calcium dynamics in neurons with endoplasmic reticulum.</li>
+                        <li><strong>Deep Learning for Scientific Computing</strong>: Hybrid approaches combining traditional numerical methods with deep neural networks.</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="btn btn-outline">Browse Research Notes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="color: white; margin-bottom: 20px;">Dr. Qingguang Guan</div>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-google-scholar"></i></a></li>
+                <li><a href="#"><i class="fab fa-researchgate"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2023 Dr. Qingguang Guan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Active link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if(pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
