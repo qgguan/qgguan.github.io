@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Elena Mathis | Professor of Mathematics</title>
+    <title>Dr. Qingguang Guan | Assistant Professor of Mathematics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -16,13 +16,11 @@
             --gray: #6c757d;
             --transition: all 0.3s ease;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Lato', sans-serif;
             line-height: 1.8;
@@ -30,7 +28,6 @@
             background-color: var(--light);
             position: relative;
         }
-
         body::before {
             content: "";
             position: fixed;
@@ -42,25 +39,21 @@
             opacity: 0.1;
             z-index: -1;
         }
-
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
-
         h1 {
             font-size: 3.5rem;
             line-height: 1.2;
         }
-
         h2 {
             font-size: 2.5rem;
             position: relative;
             padding-bottom: 0.5rem;
         }
-
         h2::after {
             content: "";
             position: absolute;
@@ -70,28 +63,23 @@
             height: 4px;
             background: var(--accent);
         }
-
         p {
             margin-bottom: 1.5rem;
         }
-
         a {
             color: var(--secondary);
             text-decoration: none;
             transition: var(--transition);
         }
-
         a:hover {
             color: var(--primary);
         }
-
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -105,27 +93,22 @@
             transition: var(--transition);
             border: 2px solid var(--primary);
         }
-
         .btn:hover {
             background: transparent;
             color: var(--primary);
         }
-
         .btn-outline {
             background: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
         }
-
         .btn-outline:hover {
             background: var(--primary);
             color: white;
         }
-
         section {
             padding: 100px 0;
         }
-
         /* Header & Navigation */
         header {
             position: fixed;
@@ -136,35 +119,29 @@
             z-index: 1000;
             padding: 15px 0;
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
         }
-
         .nav-links {
             display: flex;
             list-style: none;
         }
-
         .nav-links li {
             margin-left: 2rem;
         }
-
         .nav-links a {
             color: var(--dark);
             font-weight: 700;
             position: relative;
         }
-
         .nav-links a::after {
             content: "";
             position: absolute;
@@ -175,16 +152,13 @@
             background: var(--secondary);
             transition: var(--transition);
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .hamburger {
             display: none;
             cursor: pointer;
         }
-
         /* Hero Section */
         #hero {
             padding-top: 150px;
@@ -192,20 +166,17 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: relative;
         }
-
         .hero-text {
             flex: 1;
             padding-right: 2rem;
             z-index: 2;
         }
-
         .hero-image {
             flex: 1;
             display: flex;
@@ -213,7 +184,6 @@
             align-items: center;
             z-index: 2;
         }
-
         .hero-image-placeholder {
             width: 300px;
             height: 300px;
@@ -229,7 +199,6 @@
             border: 5px solid var(--accent);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
-
         .hero-bg-pattern {
             position: absolute;
             top: 0;
@@ -240,7 +209,6 @@
             opacity: 0.1;
             z-index: 1;
         }
-
         .title-tag {
             display: inline-block;
             background: var(--accent);
@@ -250,53 +218,43 @@
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
         }
-
         /* Section: About */
         #about {
             background: white;
         }
-
         .about-content {
             display: flex;
             gap: 50px;
         }
-
         .about-text {
             flex: 1;
         }
-
         .about-details {
             flex: 1;
         }
-
         .detail-item {
             margin-bottom: 30px;
         }
-
         .detail-item h3 {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
             color: var(--secondary);
         }
-
         .detail-item i {
             margin-right: 10px;
             color: var(--primary);
         }
-
         /* Section: Research */
         #research {
             background: linear-gradient(135deg, rgba(139, 0, 0, 0.03) 0%, rgba(255, 255, 255, 0.9) 100%);
         }
-
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
         .research-card {
             background: white;
             border-radius: 8px;
@@ -305,27 +263,22 @@
             transition: var(--transition);
             border-top: 4px solid var(--primary);
         }
-
         .research-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
         .research-content {
             padding: 30px;
         }
-
         .research-content h3 {
             color: var(--primary);
             margin-bottom: 15px;
         }
-
         .research-tags {
             display: flex;
             flex-wrap: wrap;
             margin: 15px 0;
         }
-
         .research-tag {
             background: rgba(26, 58, 109, 0.1);
             color: var(--primary);
@@ -335,16 +288,13 @@
             margin-right: 10px;
             margin-bottom: 10px;
         }
-
         /* Section: Publications */
         #publications {
             background: white;
         }
-
         .publication-list {
             margin-top: 40px;
         }
-
         .publication-item {
             padding: 20px;
             border-left: 3px solid var(--accent);
@@ -352,11 +302,9 @@
             margin-bottom: 20px;
             transition: var(--transition);
         }
-
         .publication-item:hover {
             background: rgba(212, 175, 55, 0.1);
         }
-
         .pub-year {
             display: inline-block;
             background: var(--primary);
@@ -366,39 +314,32 @@
             font-size: 0.9rem;
             margin-bottom: 10px;
         }
-
         .pub-title {
             font-weight: 700;
             margin-bottom: 10px;
         }
-
         .pub-journal {
             color: var(--gray);
             font-style: italic;
             margin-bottom: 10px;
         }
-
         .pub-authors {
             margin-bottom: 10px;
         }
-
         .pub-highlight {
             color: var(--secondary);
             font-weight: 700;
         }
-
         /* Section: Teaching */
         #teaching {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%);
         }
-
         .teaching-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
         .teaching-card {
             background: white;
             padding: 30px;
@@ -407,73 +348,59 @@
             transition: var(--transition);
             border-bottom: 4px solid var(--accent);
         }
-
         .teaching-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-
         .teaching-card h3 {
             margin-bottom: 20px;
             color: var(--secondary);
         }
-
         .course-list {
             list-style: none;
         }
-
         .course-list li {
             padding: 10px 0;
             border-bottom: 1px solid #eee;
             display: flex;
             justify-content: space-between;
         }
-
         .course-list li:last-child {
             border-bottom: none;
         }
-
         .course-level {
             color: var(--primary);
             font-weight: 700;
         }
-
         /* Section: Contact */
         #contact {
             background: var(--primary);
             color: white;
         }
-
         #contact h2 {
             color: white;
         }
-
         #contact h2::after {
             background: var(--accent);
         }
-
         .contact-wrapper {
             display: flex;
             gap: 50px;
             margin-top: 40px;
         }
-
         .contact-info {
             flex: 1;
         }
-
         .contact-detail {
             display: flex;
             align-items: flex-start;
             margin-bottom: 30px;
         }
-
         .contact-detail i {
             font-size: 1.5rem;
             margin-right: 15px;
             color: var(--accent);
         }
-
         .contact-form {
             flex: 1;
             background: white;
@@ -481,18 +408,15 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
             color: var(--dark);
             font-weight: 700;
         }
-
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -502,18 +426,15 @@
             font-size: 1rem;
             transition: var(--transition);
         }
-
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
             box-shadow: 0 0 0 3px rgba(26, 58, 109, 0.1);
         }
-
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
         }
-
         .submit-btn {
             background: var(--primary);
             color: white;
@@ -522,11 +443,9 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
-
         .submit-btn:hover {
             background: #0d2a50;
         }
-
         /* Footer */
         footer {
             background: var(--dark);
@@ -534,18 +453,15 @@
             padding: 50px 0 20px;
             text-align: center;
         }
-
         .social-links {
             display: flex;
             justify-content: center;
             list-style: none;
             margin: 30px 0;
         }
-
         .social-links li {
             margin: 0 15px;
         }
-
         .social-links a {
             display: flex;
             align-items: center;
@@ -558,19 +474,16 @@
             font-size: 1.2rem;
             transition: var(--transition);
         }
-
         .social-links a:hover {
             background: var(--accent);
             transform: translateY(-5px);
         }
-
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.6);
         }
-
         /* Responsive Design */
         @media (max-width: 992px) {
             .about-content,
@@ -578,27 +491,22 @@
             .hero-content {
                 flex-direction: column;
             }
-
             .hero-text {
                 padding-right: 0;
                 margin-bottom: 50px;
             }
-
             .hero-bg-pattern {
                 width: 100%;
                 opacity: 0.05;
             }
         }
-
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
-
             h2 {
                 font-size: 2rem;
             }
-
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -612,20 +520,16 @@
                 transition: clip-path 0.4s ease;
                 padding: 20px 0;
             }
-
             .nav-links.active {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
-
             .nav-links li {
                 margin: 15px 0;
             }
-
             .hamburger {
                 display: block;
                 font-size: 1.5rem;
             }
-
             section {
                 padding: 70px 0;
             }
@@ -637,7 +541,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Dr. Mathis</div>
+                <div class="logo">Dr. Guan</div>
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -650,15 +554,14 @@
             </nav>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section id="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="title-tag">Professor of Mathematics</span>
-                    <h1>Dr. Elena Mathis</h1>
-                    <p>Dedicated researcher and educator specializing in Algebraic Topology and Differential Geometry. Committed to advancing mathematical knowledge and inspiring the next generation of mathematicians.</p>
+                    <span class="title-tag">Assistant Professor of Mathematics</span>
+                    <h1>Dr. Qingguang Guan</h1>
+                    <p>Dedicated researcher and educator specializing in Computational Mathematics, Deep Learning, and Numerical Analysis of Nonlocal PDEs. Committed to advancing computational methods and applying them to neuroscience and other scientific domains.</p>
                     <div style="display: flex; gap: 15px; margin-top: 30px;">
                         <a href="#contact" class="btn">Contact Me</a>
                         <a href="#publications" class="btn btn-outline">View Publications</a>
@@ -666,301 +569,268 @@
                 </div>
                 <div class="hero-image">
                     <div class="hero-image-placeholder">
-                        <div>Dr. Elena Mathis<br><span style="font-size: 1rem;">Professor of Mathematics</span></div>
+                        <div>Dr. Qingguang Guan<br><span style="font-size: 1rem;">Assistant Professor of Mathematics</span></div>
                     </div>
                 </div>
             </div>
             <div class="hero-bg-pattern"></div>
         </div>
     </section>
-
     <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am a dedicated mathematician with over 15 years of experience in both research and teaching. My academic journey has taken me through some of the world's most prestigious institutions, where I've developed a passion for exploring the fundamental structures of our universe through mathematics.</p>
-                    <p>My research focuses on the intersection of Algebraic Topology and Differential Geometry, particularly in applications to theoretical physics. I believe that mathematics is not just a collection of abstract concepts, but a powerful language that helps us understand and describe the world around us.</p>
-                    <p>In my teaching, I strive to make complex mathematical concepts accessible and engaging, fostering critical thinking and problem-solving skills that serve students in all areas of their lives.</p>
+                    <p>I am a computational mathematician with expertise in numerical methods for partial differential equations, deep learning, and high-performance computing. My research bridges the gap between theoretical mathematics and practical applications in scientific computing and neuroscience.</p>
+                    <p>My work focuses on developing and analyzing numerical methods for nonlocal problems, stochastic PDEs, and computational neuroscience applications. I am particularly interested in the intersection of traditional numerical methods and modern machine learning techniques.</p>
+                    <p>In my teaching, I emphasize the connections between mathematical theory and computational implementation, helping students develop both theoretical understanding and practical coding skills for solving real-world problems.</p>
                 </div>
                 <div class="about-details">
                     <div class="detail-item">
                         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                        <p><strong>Ph.D. in Mathematics</strong><br>Princeton University, 2005</p>
-                        <p><strong>M.Sc. in Advanced Mathematics</strong><br>University of Cambridge, 2001</p>
-                        <p><strong>B.Sc. in Mathematics</strong><br>MIT, 1999</p>
+                        <p><strong>Ph.D. in Computational Science</strong><br>Florida State University, 2016<br>Advisor: Professor Max Gunzburger</p>
+                        <p><strong>M.Sc. in Computational Mathematics</strong><br>Jilin University, 2011<br>Advisor: Professor Yongkui Zou</p>
+                        <p><strong>B.Sc. in Computational Mathematics</strong><br>Jilin University, 2009</p>
                     </div>
                     <div class="detail-item">
-                        <h3><i class="fas fa-trophy"></i> Awards & Honors</h3>
-                        <p>AMS Centennial Fellowship, 2018</p>
-                        <p>Sigma Xi Research Award, 2015</p>
-                        <p>Outstanding Teaching Award, 2012</p>
+                        <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
+                        <p><strong>Assistant Professor</strong><br>University of Southern Mississippi, 2022-present</p>
+                        <p><strong>Research Assistant Professor</strong><br>Temple University, 2019-2022</p>
+                        <p><strong>Visiting Professor</strong><br>Missouri University of Science and Technology, 2018-2019</p>
                     </div>
                     <div class="detail-item">
                         <h3><i class="fas fa-file-pdf"></i> Curriculum Vitae</h3>
-                        <p>Download my full academic CV for complete details on my research, publications, and professional experience.</p>
+                        <p>Download my complete academic CV for details on my research, publications, and professional experience.</p>
                         <a href="#" class="btn">Download CV (PDF)</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Research Section -->
     <section id="research">
         <div class="container">
             <h2>Research Interests</h2>
-            <p>My research explores the deep connections between topology and geometry, with applications to theoretical physics. I specialize in developing novel approaches to longstanding problems in these fields.</p>
-            
+            <p>My research focuses on developing computational methods for solving complex mathematical problems with applications in science and engineering. I combine traditional numerical analysis with modern computational approaches to tackle challenging problems.</p>
             <div class="research-grid">
                 <div class="research-card">
                     <div class="research-content">
-                        <h3>Algebraic Topology</h3>
-                        <p>Investigating higher homotopy groups and their applications to classification problems in topology.</p>
+                        <h3>Computational Neuroscience</h3>
+                        <p>Developing computational models for calcium dynamics in neurons and using deep learning to model ion channel behavior.</p>
                         <div class="research-tags">
-                            <span class="research-tag">Homotopy Theory</span>
-                            <span class="research-tag">Homology</span>
-                            <span class="research-tag">Cohomology</span>
+                            <span class="research-tag">Neural Modeling</span>
+                            <span class="research-tag">Calcium Dynamics</span>
+                            <span class="research-tag">High Performance Computing</span>
                         </div>
                     </div>
                 </div>
-                
                 <div class="research-card">
                     <div class="research-content">
-                        <h3>Differential Geometry</h3>
-                        <p>Research on Riemannian manifolds, curvature flows, and geometric analysis with applications to physics.</p>
+                        <h3>Deep Learning & Neural Networks</h3>
+                        <p>Investigating the theoretical foundations of deep neural networks and developing hybrid PDE-deep learning models for scientific applications.</p>
                         <div class="research-tags">
-                            <span class="research-tag">Manifolds</span>
-                            <span class="research-tag">Curvature</span>
-                            <span class="research-tag">Tensor Analysis</span>
+                            <span class="research-tag">Deep Neural Networks</span>
+                            <span class="research-tag">Hybrid Models</span>
+                            <span class="research-tag">Global Optima Analysis</span>
                         </div>
                     </div>
                 </div>
-                
                 <div class="research-card">
                     <div class="research-content">
-                        <h3>Mathematical Physics</h3>
-                        <p>Applying topological methods to quantum field theory and string theory frameworks.</p>
+                        <h3>Numerical Methods for PDEs</h3>
+                        <p>Designing and analyzing finite element methods (FEM, Weak Galerkin FEM, VEM) for nonlocal and stochastic partial differential equations.</p>
                         <div class="research-tags">
-                            <span class="research-tag">Quantum Theory</span>
-                            <span class="research-tag">Gauge Theory</span>
-                            <span class="research-tag">String Theory</span>
+                            <span class="research-tag">Finite Element Methods</span>
+                            <span class="research-tag">Nonlocal PDEs</span>
+                            <span class="research-tag">Stochastic Analysis</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Publications Section -->
     <section id="publications">
         <div class="container">
             <h2>Selected Publications</h2>
             <p>A selection of my most significant research contributions in peer-reviewed journals and conference proceedings.</p>
-            
             <div class="publication-list">
                 <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <div class="pub-title">How Can Deep Neural Networks Fail Even With Global Optima?</div>
+                    <div class="pub-journal">International Journal of Numerical Analysis and Modeling</div>
+                    <div class="pub-authors">Guan, Q.</div>
+                    <div class="pub-abstract">This paper investigates the theoretical limitations of deep neural networks even when global optima are achieved, providing insights into network architecture design.</div>
+                </div>
+                <div class="publication-item">
+                    <span class="pub-year">2024</span>
+                    <div class="pub-title">Hybrid PDE-Deep Neural Network Model for Calcium Dynamics in Neurons</div>
+                    <div class="pub-journal">Journal of Machine Learning for Modeling and Computing</div>
+                    <div class="pub-authors">Gurung, A., & Guan, Q.</div>
+                    <div class="pub-abstract">We develop a novel hybrid approach combining partial differential equations with deep learning to model calcium dynamics in neurons with high accuracy.</div>
+                </div>
+                <div class="publication-item">
                     <span class="pub-year">2023</span>
-                    <div class="pub-title">Topological Approaches to Quantum Field Theory</div>
-                    <div class="pub-journal">Journal of Mathematical Physics</div>
-                    <div class="pub-authors">Mathis, E., Johnson, M., &amp; Chen, L.</div>
-                    <div class="pub-abstract">We introduce a novel topological framework for analyzing quantum field theories that provides new insights into particle interactions.</div>
+                    <div class="pub-title">Efficient numerical method for shape optimization problem constrained by stochastic elliptic interface equation</div>
+                    <div class="pub-journal">Communications on Analysis and Computation</div>
+                    <div class="pub-authors">Guan, Q., Guo, X., & Zhao, W.</div>
+                    <div class="pub-abstract">This research presents an efficient numerical approach for solving shape optimization problems with stochastic constraints, with applications in engineering design.</div>
                 </div>
-                
                 <div class="publication-item">
-                    <span class="pub-year">2021</span>
-                    <div class="pub-title">Curvature Flows in Higher Dimensions</div>
-                    <div class="pub-journal">Annals of Mathematics</div>
-                    <div class="pub-authors">Mathis, E., &amp; Rodriguez, P.</div>
-                    <div class="pub-abstract">This paper establishes new existence theorems for Ricci flows in dimensions greater than four, solving several open problems.</div>
-                </div>
-                
-                <div class="publication-item">
-                    <span class="pub-year">2019</span>
-                    <div class="pub-title">Homotopical Methods in Geometric Analysis</div>
-                    <div class="pub-journal">Advances in Mathematics</div>
-                    <div class="pub-authors">Mathis, E.</div>
-                    <div class="pub-abstract">We develop a new approach to geometric analysis using tools from algebraic topology, with applications to minimal surface theory.</div>
-                    <div class="pub-highlight">Featured in "Notices of the AMS" - June 2020</div>
-                </div>
-                
-                <div class="publication-item">
-                    <span class="pub-year">2017</span>
-                    <div class="pub-title">Symplectic Topology and Mirror Symmetry</div>
-                    <div class="pub-journal">Communications in Mathematical Physics</div>
-                    <div class="pub-authors">Mathis, E., &amp; Williams, T.</div>
-                    <div class="pub-abstract">This research establishes new connections between symplectic topology and mirror symmetry, resolving conjectures in the field.</div>
+                    <span class="pub-year">2023</span>
+                    <div class="pub-title">Weak Galerkin finite element method for second order problems on curvilinear polytopal meshes with Lipschitz continuous edges or faces</div>
+                    <div class="pub-journal">Computers and Mathematics with Applications</div>
+                    <div class="pub-authors">Guan, Q., Queisser, G., & Zhao, W.</div>
+                    <div class="pub-abstract">We develop a robust Weak Galerkin finite element method that works on general curvilinear polytopal meshes, expanding the applicability of this numerical technique.</div>
+                    <div class="pub-highlight">Featured in recent computational mathematics conferences</div>
                 </div>
             </div>
-            
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#" class="btn">View Full Publication List</a>
             </div>
         </div>
     </section>
-
     <!-- Teaching Section -->
     <section id="teaching">
         <div class="container">
             <h2>Teaching Experience</h2>
-            <p>I have developed and taught courses at all levels, from introductory undergraduate to advanced graduate seminars.</p>
-            
+            <p>I have developed and taught courses at all levels, from introductory undergraduate to advanced graduate seminars, with emphasis on computational mathematics and its applications.</p>
             <div class="teaching-content">
                 <div class="teaching-card">
                     <h3>Teaching Philosophy</h3>
-                    <p>My approach emphasizes conceptual understanding over rote memorization. I challenge students to think deeply about mathematical structures and their interconnections.</p>
-                    <p>I believe in creating an inclusive classroom environment where students feel comfortable exploring ideas and learning from mistakes.</p>
-                    <p>My goal is to develop students' mathematical intuition and problem-solving abilities that will serve them throughout their careers.</p>
+                    <p>My approach emphasizes the integration of mathematical theory with computational implementation. I believe students learn best when they understand both the "why" and the "how" of mathematical concepts.</p>
+                    <p>I create an environment where students can explore mathematical concepts through coding and visualization, making abstract ideas more concrete and applicable.</p>
+                    <p>My goal is to develop students' computational thinking skills that will serve them in both academic and industry careers in the increasingly data-driven world.</p>
                 </div>
-                
                 <div class="teaching-card">
                     <h3>Recent Courses</h3>
                     <ul class="course-list">
                         <li>
-                            <span>Algebraic Topology</span>
+                            <span>Deep Learning Seminar</span>
                             <span class="course-level">Graduate</span>
                         </li>
                         <li>
-                            <span>Differential Geometry</span>
+                            <span>Ordinary Differential Equations</span>
                             <span class="course-level">Graduate</span>
                         </li>
                         <li>
-                            <span>Advanced Calculus</span>
+                            <span>Introduction to PDE</span>
+                            <span class="course-level">Graduate</span>
+                        </li>
+                        <li>
+                            <span>Calculus IV with Analytic Geometry</span>
                             <span class="course-level">Undergraduate</span>
                         </li>
                         <li>
-                            <span>Linear Algebra</span>
+                            <span>Calculus I with Analytic Geometry</span>
                             <span class="course-level">Undergraduate</span>
-                        </li>
-                        <li>
-                            <span>Mathematical Physics Seminar</span>
-                            <span class="course-level">Graduate</span>
                         </li>
                     </ul>
                 </div>
-                
                 <div class="teaching-card">
-                    <h3>Student Supervision</h3>
-                    <p>I have supervised 8 Ph.D. dissertations and 15 Master's theses in various areas of pure and applied mathematics.</p>
-                    <p>My former students now hold positions at:</p>
+                    <h3>Teaching Focus</h3>
+                    <p>My courses typically cover:</p>
                     <ul>
-                        <li>Stanford University</li>
-                        <li>ETH Zurich</li>
-                        <li>Microsoft Research</li>
-                        <li>National Labs</li>
-                        <li>Leading tech companies</li>
+                        <li>Numerical methods for differential equations</li>
+                        <li>Finite element methods and computational techniques</li>
+                        <li>Deep learning and neural network applications</li>
+                        <li>High-performance scientific computing</li>
+                        <li>Mathematical modeling of real-world phenomena</li>
                     </ul>
+                    <p>I incorporate hands-on coding exercises using Python, MATLAB, and other computational tools to reinforce theoretical concepts.</p>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
             <p>I welcome inquiries regarding research collaborations, speaking engagements, and academic opportunities.</p>
-            
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>elena.mathis@email.edu</p>
+                            <p>qingguang.guan@usm.edu</p>
                         </div>
                     </div>
-                    
                     <div class="contact-detail">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+1-850-228-6284</p>
                         </div>
                     </div>
-                    
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>Office</h3>
-                            <p>Department of Mathematics<br>University of Excellence<br>123 Academic Avenue<br>Cambridge, MA 02138</p>
+                            <p>School of Mathematics and Natural Sciences<br>University of Southern Mississippi<br>118 College Drive<br>Hattiesburg, MS 39406</p>
                         </div>
                     </div>
-                    
                     <div class="contact-detail">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-globe"></i>
                         <div>
-                            <h3>Office Hours</h3>
-                            <p>Tuesday & Thursday: 2:00-4:00 PM<br>Or by appointment</p>
+                            <h3>Online</h3>
+                            <p><a href="https://sites.google.com/site/qingguangguan" style="color: white;">https://sites.google.com/site/qingguangguan</a></p>
+                            <p><a href="#" style="color: white;">Google Scholar Profile</a></p>
                         </div>
                     </div>
                 </div>
-                
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" class="form-control" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" class="form-control" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <input type="text" id="subject" class="form-control" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" class="form-control" required></textarea>
                         </div>
-                        
                         <button type="submit" class="form-control submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="logo" style="color: white; margin-bottom: 20px;">Dr. Elena Mathis</div>
-            
+            <div class="logo" style="color: white; margin-bottom: 20px;">Dr. Qingguang Guan</div>
             <ul class="social-links">
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                 <li><a href="#"><i class="fab fa-google-scholar"></i></a></li>
                 <li><a href="#"><i class="fab fa-researchgate"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fab fa-github"></i></a></li>
             </ul>
-            
             <div class="copyright">
-                &copy; 2023 Dr. Elena Mathis. All rights reserved.
+                &copy; 2023 Dr. Qingguang Guan. All rights reserved.
             </div>
         </div>
     </footer>
-
     <script>
         // Mobile Navigation
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
-
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -969,7 +839,6 @@
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
             // Basic validation
             if(name && email && subject && message) {
                 // In a real implementation, you would send the data to a server
@@ -978,21 +847,17 @@
                 this.reset();
             }
         });
-
         // Active link highlighting
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
-            
             let current = '';
-            
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 if(pageYOffset >= sectionTop - 100) {
                     current = section.getAttribute('id');
                 }
             });
-            
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if(link.getAttribute('href').substring(1) === current) {
@@ -1000,15 +865,12 @@
                 }
             });
         });
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
