@@ -28,17 +28,6 @@
             background-color: var(--light);
             position: relative;
         }
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23e9ecef" stroke-width="0.5"/></svg>');
-            opacity: 0.1;
-            z-index: -1;
-        }
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -97,15 +86,6 @@
             background: transparent;
             color: var(--primary);
         }
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
         section {
             padding: 100px 0;
         }
@@ -159,62 +139,20 @@
             display: none;
             cursor: pointer;
         }
-
         /* Section: Notes */
         #notes {
             background: white;
+            margin-top: 80px;
         }
         .notes-content {
             margin-top: 40px;
-        }
-        .notes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .notes-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary);
-        }
-        .notes-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        .notes-content {
-            padding: 30px;
-        }
-        .notes-content h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        .notes-tags {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 15px 0;
-        }
-        .notes-tag {
-            background: rgba(26, 58, 109, 0.1);
-            color: var(--primary);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 10px;
-            margin-bottom: 10px;
         }
         .notes-section {
-            margin-top: 40px;
-            padding: 30px;
-            background: rgba(26, 58, 109, 0.05);
-            border-radius: 8px;
+            margin-bottom: 40px;
         }
         .notes-section h3 {
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         /* Footer */
         footer {
@@ -256,12 +194,6 @@
         }
         /* Responsive Design */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -315,93 +247,39 @@
     <section id="notes">
         <div class="container">
             <h2>Teaching & Research Notes</h2>
-            <p>Here you'll find lecture notes, technical documents, and supplementary materials from my courses and research projects. These materials cover various topics in computational mathematics, deep learning, and numerical analysis of PDEs.</p>
             
-            <div class="notes-grid">
-                <div class="notes-card">
-                    <div class="notes-content">
-                        <h3>Deep Learning Seminar</h3>
-                        <p>Lecture notes covering deep neural networks, CNNs, RNNs, Transformers, and GANs with applications to scientific computing.</p>
-                        <div class="notes-tags">
-                            <span class="notes-tag">Deep Learning</span>
-                            <span class="notes-tag">Neural Networks</span>
-                            <span class="notes-tag">AI</span>
-                        </div>
-                        <a href="#" class="btn" style="font-size: 0.8rem; padding: 8px 15px;">Download Notes (PDF)</a>
-                    </div>
-                </div>
-                
-                <div class="notes-card">
-                    <div class="notes-content">
-                        <h3>Numerical Analysis of PDEs</h3>
-                        <p>Comprehensive notes on finite element methods, weak Galerkin methods, and numerical solutions for partial differential equations.</p>
-                        <div class="notes-tags">
-                            <span class="notes-tag">FEM</span>
-                            <span class="notes-tag">Weak Galerkin</span>
-                            <span class="notes-tag">Numerical Methods</span>
-                        </div>
-                        <a href="#" class="btn" style="font-size: 0.8rem; padding: 8px 15px;">Download Notes (PDF)</a>
-                    </div>
-                </div>
-                
-                <div class="notes-card">
-                    <div class="notes-content">
-                        <h3>Computational Neuroscience</h3>
-                        <p>Notes on modeling calcium dynamics in neurons and hybrid PDE-deep learning approaches for neuroscience applications.</p>
-                        <div class="notes-tags">
-                            <span class="notes-tag">Neuroscience</span>
-                            <span class="notes-tag">Calcium Dynamics</span>
-                            <span class="notes-tag">Hybrid Models</span>
-                        </div>
-                        <a href="#" class="btn" style="font-size: 0.8rem; padding: 8px 15px;">Download Notes (PDF)</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="notes-section" id="teaching-notes">
+            <div class="notes-section">
                 <h3>Teaching Materials</h3>
-                <p>These are materials developed for my courses at the University of Southern Mississippi and Temple University:</p>
+                <p>Materials developed for courses at the University of Southern Mississippi and Temple University:</p>
                 
-                <div style="margin-top: 20px;">
-                    <h4 style="color: var(--primary); margin-bottom: 10px;">Graduate Courses</h4>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>Deep Learning Seminar (2023 Fall)</strong>: Notes on Deep Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, and Generative Adversarial Networks.</li>
-                        <li style="margin-bottom: 10px;"><strong>Ordinary Differential Equations (Graduate, 2023 Fall)</strong>: Comprehensive notes on ODE theory and applications.</li>
-                        <li style="margin-bottom: 10px;"><strong>Introduction to PDE (2023 Spring)</strong>: Foundational materials on partial differential equations.</li>
-                        <li style="margin-bottom: 10px;"><strong>Numerical Analysis I (2021 Fall, Temple University)</strong>: Detailed notes on numerical methods for scientific computing.</li>
-                    </ul>
-                    
-                    <h4 style="color: var(--primary); margin-bottom: 10px;">Undergraduate Courses</h4>
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>Calculus I, III, IV (Multiple Semesters)</strong>: Lecture notes and problem sets for calculus sequence.</li>
-                        <li style="margin-bottom: 10px;"><strong>Ordinary Differential Equations (2020 Spring, 2019 Spring)</strong>: Teaching materials for ODE courses.</li>
-                        <li style="margin-bottom: 10px;"><strong>Trigonometry & College Algebra (2018 Fall)</strong>: Foundational mathematics materials.</li>
-                    </ul>
-                </div>
+                <h4 style="color: var(--primary); margin-bottom: 10px;">Graduate Courses</h4>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>Deep Learning Seminar (2023 Fall)</strong>: Notes on Deep Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, and Generative Adversarial Networks.</li>
+                    <li style="margin-bottom: 10px;"><strong>Ordinary Differential Equations (Graduate, 2023 Fall)</strong>: Comprehensive notes on ODE theory and applications.</li>
+                    <li style="margin-bottom: 10px;"><strong>Introduction to PDE (2023 Spring)</strong>: Foundational materials on partial differential equations.</li>
+                    <li style="margin-bottom: 10px;"><strong>Numerical Analysis I (2021 Fall, Temple University)</strong>: Detailed notes on numerical methods for scientific computing.</li>
+                </ul>
                 
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="#" class="btn">Download All Teaching Materials</a>
-                </div>
+                <h4 style="color: var(--primary); margin-bottom: 10px;">Undergraduate Courses</h4>
+                <ul style="margin-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>Calculus I, III, IV</strong>: Lecture notes and problem sets for calculus sequence.</li>
+                    <li style="margin-bottom: 10px;"><strong>Ordinary Differential Equations (2020 Spring, 2019 Spring)</strong>: Teaching materials for ODE courses.</li>
+                    <li><strong>Trigonometry & College Algebra (2018 Fall)</strong>: Foundational mathematics materials.</li>
+                </ul>
             </div>
             
             <div class="notes-section">
                 <h3>Research Notes</h3>
-                <p>Technical documents and working notes from my research projects:</p>
+                <p>Technical documents and working notes from research projects:</p>
                 
-                <div style="margin-top: 20px;">
-                    <ul style="margin-left: 20px; margin-bottom: 20px;">
-                        <li style="margin-bottom: 15px;"><strong>Weak Galerkin Finite Element Methods</strong>: Detailed analysis and implementation notes for WG-FEM on various mesh types.</li>
-                        <li style="margin-bottom: 15px;"><strong>Nonlocal PDEs and Fractional Diffusion</strong>: Mathematical foundations and numerical approaches for nonlocal problems.</li>
-                        <li style="margin-bottom: 15px;"><strong>Stochastic PDEs and Uncertainty Quantification</strong>: Methods for solving PDEs with random inputs and parameters.</li>
-                        <li style="margin-bottom: 15px;"><strong>Virtual Element Methods</strong>: Implementation details and error analysis for VEM.</li>
-                        <li style="margin-bottom: 15px;"><strong>Computational Neuroscience Models</strong>: Mathematical models of calcium dynamics in neurons with endoplasmic reticulum.</li>
-                        <li><strong>Deep Learning for Scientific Computing</strong>: Hybrid approaches combining traditional numerical methods with deep neural networks.</li>
-                    </ul>
-                </div>
-                
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="#" class="btn btn-outline">Browse Research Notes</a>
-                </div>
+                <ul style="margin-left: 20px;">
+                    <li style="margin-bottom: 15px;"><strong>Weak Galerkin Finite Element Methods</strong>: Analysis and implementation notes for WG-FEM on various mesh types.</li>
+                    <li style="margin-bottom: 15px;"><strong>Nonlocal PDEs and Fractional Diffusion</strong>: Mathematical foundations and numerical approaches.</li>
+                    <li style="margin-bottom: 15px;"><strong>Stochastic PDEs and Uncertainty Quantification</strong>: Methods for solving PDEs with random inputs.</li>
+                    <li style="margin-bottom: 15px;"><strong>Virtual Element Methods</strong>: Implementation details and error analysis for VEM.</li>
+                    <li style="margin-bottom: 15px;"><strong>Computational Neuroscience Models</strong>: Mathematical models of calcium dynamics in neurons with endoplasmic reticulum.</li>
+                    <li><strong>Deep Learning for Scientific Computing</strong>: Hybrid approaches combining numerical methods with deep neural networks.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -433,38 +311,6 @@
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-            });
-        });
-        
-        // Active link highlighting
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if(pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
             });
         });
     </script>
