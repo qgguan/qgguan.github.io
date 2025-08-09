@@ -1,0 +1,131 @@
+User Name:  ssh student325@magnolia.usm.edu
+Password:   2q1758JSxLyIWPNiMXOP
+
+1. Check for Existing SSH Keys
+$ ls ~/.ssh
+2. If there are no keys, Generate a New SSH Key Pair
+$ ssh-keygen -t rsa
+3. When prompted, press Enter to accept the default file location 
+4. local machine: 
+$ cat ~/.ssh/id_rsa.pub
+5. local machine: 
+$ copy "your_public_key_string"
+6. Login HPC: 
+$ echo "your_public_key_string" >> ~/.ssh/authorized_keys
+7. Now you can auto login using: ssh student325@magnolia.usm.edu
+
+Use HPC Cluster
+
+0. Put the following lines into .bashrc
+module load gmake/4.3
+module load openmpi/4.1.5
+module load gcc/13.2.0 
+module load python/3.11.5
+
+Then, 
+
+module remove openssl/1.0.2k
+module load cmake/3.24.2
+module load openssl/3.0.9
+
+Or 
+
+wget https://github.com/Kitware/CMake/releases/download/v3.31.5/cmake-3.31.5.tar.gz
+tar -xzf cmake-3.31.5.tar.gz
+cd cmake*
+./bootstrap --prefix=$HOME/.local
+make
+make install
+
+2. Download and Install FreeFem (v4.15) on HPC 
+cd ~
+wget https://github.com/FreeFem/FreeFem-sources/archive/refs/tags/v4.15.tar.gz
+tar -xzf v4.15.tar.gz
+mv FreeFem-sources-4.15 FreeFem-sources
+cd FreeFem-sources
+autoreconf -i
+./configure --enable-download --enable-optim --prefix=${HOME}/FF
+./3rdparty/getall -o PETSc
+cd 3rdparty/ff-petsc
+
+Use the Makefile provided (in FF++ folder)! 
+
+make petsc-slepc  
+
+cd $HOME/FreeFem-sources
+./reconfigure
+make -j12
+make install 
+
+Then, put 
+
+export PATH=$PATH:/homes/01/c/student325/FF/bin 
+
+to ~/.bashrc
+
+Or 
+export PATH=${PATH}:/homes/01/c/student325/FreeFem-sources/src/mpi 
+export PATH=${PATH}:/homes/01/c/student325/FreeFem-sources/src/nw 
+Setup $HOME/.freefem++.pref, put the following in it:
+loadpath += "/homes/01/c/student325/FreeFem-sources/plugin/mpi"
+loadpath += "/homes/01/c/student325/FreeFem-sources/plugin/seq"
+includepath += "/homes/01/c/student325/FreeFem-sources/idp"
+
+3. Put the following to $HOME/.bashrc, so that we can use PETSc directly:  
+export PATH=$PATH:$HOME/FreeFem-sources-4.15/3rdparty/ff-petsc/petsc-3.22.2
+
+4. Install petsc4py and mpi4py, those two are wrappers only:
+$ pip3 install petsc4py 
+$ pip3 install mpi4py
+
+5. Test:
+$ python3 
+
+import petsc4py
+petsc4py.init()
+from petsc4py import PETSc
+print(PETSc.Sys.getVersion())
+
+6. Create rank.py:
+from mpi4py import MPI
+import petsc4py
+# Test for petsc
+petsc4py.init()
+from petsc4py import PETSc
+print(PETSc.Sys.getVersion())
+# Initialize MPI
+comm = MPI.COMM_WORLD
+# Get the rank of the current process
+rank = comm.Get_rank()
+# Get the total number of processes
+size = comm.Get_size()
+# Print the rank and total size from each process
+print(f"I am process {rank} of {size}")
+# Optional: Synchronize all processes
+comm.Barrier()
+
+7. Use HPC put the following in batch.sh file:
+#!/bin/sh
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=15
+##SBATCH --mail-user=myemail@example.com
+##SBATCH --mail-type=END
+#SBATCH --time=0-00:10:00
+#SBATCH --job-name=hostname
+# This is my first script
+mpirun python3 rank.py
+
+8. Then: $ sbatch batch.sh
+
+Notes:
+1. If you lost .bashrc:
+cp /etc/skel/.bashrc ~/.bashrc
+
+2. If you use virtual env for python:
+source myenv/bin/activate
+
+3. If you are installing openmpi to personal computer:
+Install openmpi: sudo apt install openmpi-bin openmpi-common libopenmpi-dev -y
+
+
+
