@@ -43,11 +43,9 @@ PETSC_OPENBLAS = --with-blaslapack-include='$(shell echo $(BLASINC) | sed "s/-I/
 PETSC_OPENBLAS_C = $(PETSC_OPENBLAS)
 endif
 PETSC_DOWNLOAD_C := --with-metis-dir=$(DIR_INSTALL_REAL) \
-		--with-suitesparse-dir=$(DIR_INSTALL_REAL) \
 		--with-parmetis-dir=$(DIR_INSTALL_REAL) 
 PETSC_DOWNLOAD := --download-metis \
-		--download-parmetis \
-		--download-suitesparse  
+		--download-parmetis  
 ifeq ($(FFCMAKE),no)
 PETSC_DOWNLOAD := $(PETSC_DOWNLOAD) --download-cmake
 endif
@@ -189,7 +187,7 @@ $(SRCDIR)/tag-conf-real:$(SRCDIR)/tag-tar
 	touch $@
 Make-petsc-download.mk:$(SRCDIR)/tag-install-real
 	test -e $(DIR_INSTALL_REAL)/lib/petsc/conf/petscvariables
-	egrep 'PETSC_LIB_BASIC|SCALAPACK_|METIS_|HPDDM_|HTOOL_|SUITESPARSE_' $(DIR_INSTALL_REAL)/lib/petsc/conf/petscvariables | sed 's/-I/ /g'|sort >$@
+	egrep 'PETSC_LIB_BASIC|SCALAPACK_|METIS_|HPDDM_|HTOOL_' $(DIR_INSTALL_REAL)/lib/petsc/conf/petscvariables | sed 's/-I/ /g'|sort >$@
 ifdef 	COMPLEX_CASE
 #  version COMPLEX.....
 $(SRCDIR)/tag-conf-complex:$(SRCDIR)/tag-tar Make-petsc-download.mk
