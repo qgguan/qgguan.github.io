@@ -40,17 +40,17 @@ make install
 
 Then, put 
 
-export PATH=$PATH:/homes/01/c/student325/FF/bin 
+export PATH=$PATH:/u/qguan1/FF/bin 
 
 to ~/.bashrc
 
 Or 
-export PATH=${PATH}:/homes/01/c/student325/FreeFem-sources/src/mpi 
-export PATH=${PATH}:/homes/01/c/student325/FreeFem-sources/src/nw 
+export PATH=${PATH}:/u/qguan1/FreeFem-sources/src/mpi 
+export PATH=${PATH}:/u/qguan1/FreeFem-sources/src/nw 
 Setup $HOME/.freefem++.pref, put the following in it:
-loadpath += "/homes/01/c/student325/FreeFem-sources/plugin/mpi"
-loadpath += "/homes/01/c/student325/FreeFem-sources/plugin/seq"
-includepath += "/homes/01/c/student325/FreeFem-sources/idp"
+loadpath += "/u/qguan1/FreeFem-sources/plugin/mpi"
+loadpath += "/u/qguan1/FreeFem-sources/plugin/seq"
+includepath += "/u/qguan1/FreeFem-sources/idp"
 
 3. Put the following to $HOME/.bashrc, so that we can use PETSc directly:  
 export PATH=$PATH:$HOME/FreeFem-sources-4.15/3rdparty/ff-petsc/petsc-3.22.2
@@ -107,6 +107,7 @@ source myenv/bin/activate
 
 3. If you are installing openmpi to personal computer:
 Install openmpi: sudo apt install openmpi-bin openmpi-common libopenmpi-dev -y
+
 
 
 
