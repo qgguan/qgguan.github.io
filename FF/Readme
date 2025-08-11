@@ -1,17 +1,4 @@
 # NCSA Delta GPU
-1. Check for Existing SSH Keys
-$ ls ~/.ssh
-2. If there are no keys, Generate a New SSH Key Pair
-$ ssh-keygen -t rsa
-3. When prompted, press Enter to accept the default file location 
-4. local machine: 
-$ cat ~/.ssh/id_rsa.pub
-5. local machine: 
-$ copy "your_public_key_string"
-6. Login HPC: 
-$ echo "your_public_key_string" >> ~/.ssh/authorized_keys
-7. Now you can auto login using: ssh student325@magnolia.usm.edu
-
 Use HPC Cluster
 
 1. Put the following lines into .bashrc
@@ -103,6 +90,7 @@ source myenv/bin/activate
 
 3. If you are installing openmpi to personal computer:
 Install openmpi: sudo apt install openmpi-bin openmpi-common libopenmpi-dev -y
+
 
 
 
